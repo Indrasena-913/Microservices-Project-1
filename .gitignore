@@ -1,0 +1,36 @@
+# Ignore Python virtual environments in all subfolders
+**/venv/
+**/env/
+**/.venv/
+**/.virtualenv/
+
+# Ignore all .env files in any directory
+**/.env
+**/.env.*
+
+# Ignore Python bytecode
+**/__pycache__/
+**/*.py[cod]
+**/alembic.ini
+
+# Ignore alembic SQLite DB files or migration cache (optional)
+auth-service/alembic/
+alembic/versions/*.pyc
+
+# Ignore Python egg and dist files
+*.egg-info/
+dist/
+build/
+
+# Ignore editor and OS files (optional)
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore logs and DB files
+*.log
+*.sqlite3
+*.db
+
