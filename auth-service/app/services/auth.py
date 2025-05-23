@@ -1,5 +1,5 @@
 from datetime import UTC, datetime, timedelta, timezone
-from jose import jwt
+from jose import JWTError, jwt
 from app.schemas.auth import CreateaccessTokenRequest
 from app.core.config import settings
 
@@ -22,3 +22,10 @@ def create_refresh_token(userdata:CreateaccessTokenRequest,expires_delta:int=REQ
     dataencode["exp"]=int(expires_in.timestamp())
     refresh_token=jwt.encode(dataencode,JWT_SECRET,algorithm=ALGORITHM)
     return {"type":"refresh","refresh_token":refresh_token}
+
+def verify_refresh_token(token: str) -> CreateaccessTokenRequest:
+    try:
+        payload = jwt.decode(token, JWT_SECRET, algorithms=[ALGORITHM])
+        return CreateaccessTokenRequest(**payload)
+    except JWTError:
+        raise Exception("Invalid or expired refresh token")
