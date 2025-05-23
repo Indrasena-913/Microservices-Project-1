@@ -17,7 +17,7 @@ async def register_user(userdata:LoginRequest,db:db_dependency):
     if not existing_user:
         raise HTTPException(status_code=404,detail="User not found please register first")
     userpassword=existing_user.password
-    isMatching=verify_the_password(userpassword,userdata.password)
+    isMatching = verify_the_password(userdata.password, userpassword)
 
     if not isMatching:
         raise HTTPException(status_code=401,detail="Invalid credentials")
