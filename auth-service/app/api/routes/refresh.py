@@ -18,6 +18,6 @@ async def refresh_access_token(request: Request):
     new_access_token = create_access_token(token_data)
 
     return {
-        "access_token": new_access_token["access_token"],
+        "new_access_token": new_access_token["access_token"],
         "token_type": "bearer"
     }
