@@ -6,6 +6,8 @@ load_dotenv()
 
 class Settings(BaseSettings):
     DATABASE_URL:str
+    JWT_SECRET:str
+    ALGORITHM:str
 
 
     class Config:

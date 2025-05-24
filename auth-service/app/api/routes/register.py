@@ -29,7 +29,7 @@ async def register_user(userdata:RegisterRequest,db:db_dependency):
         "name": userdata.name,
         "email": userdata.email,
         "password":hashedpassword,
-        "role": "user"  
+        "role": "admin"  
     }
 
     async with httpx.AsyncClient() as client:
