@@ -52,14 +52,7 @@ def get_the_current_user(req: Request, res: Response, db: db_dependency):
         raise HTTPException(status_code=400, detail="Invalid token format")
 
 
-def verify_access_token(token: str):
-    try:
-        payload = jwt.decode(token, JWT_SECRET, algorithms=[ALGORITHM])
-        return payload
-    except JWTError:
-        raise Exception("Invalid or expired refresh token")
 
 
 
-admin_dependency=Annotated[Session,Depends(get_the_current_user)]
-user_dependency=Annotated[Session,Depends(verify_access_token)]
+user_dependency=Annotated[Session,Depends(get_the_current_user)]
