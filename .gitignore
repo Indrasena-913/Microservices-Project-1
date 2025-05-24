@@ -1,5 +1,6 @@
 # Ignore Python virtual environments in all subfolders
 **/venv/
+**/uservenv/
 **/env/
 **/.venv/
 **/.virtualenv/
@@ -15,7 +16,10 @@
 
 # Ignore alembic SQLite DB files or migration cache (optional)
 auth-service/alembic/
+user-service/alembic/
 alembic/versions/*.pyc
+alembic/versions/*.pyc
+
 
 # Ignore Python egg and dist files
 *.egg-info/
