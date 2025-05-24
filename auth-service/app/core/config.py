@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     JWT_SECRET:str
     ALGORITHM:str
     REQUEST_TOKEN_EXPIRES_IN:int
+    USER_SERVICE_CREATE_USER_URL:str
 
 
     class Config:
