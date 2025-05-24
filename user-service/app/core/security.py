@@ -1,6 +1,6 @@
 from fastapi import Request, Response, HTTPException
 from starlette import status
-from jose import jwt, JWTError
+from jose import jwt, JWTError # type: ignore
 from app.core.config import settings
 from app.api.dependency import db_dependency
 from app.models.user import User
